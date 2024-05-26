@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const product = {
+            name: "samsung Mobile",
+            price: 10000,
+            details: "lorem ipsum",
+            weight: "50g"
+        }
+
+        console.log(product);
+
+        product.info = function(){
+            let text = "";
+            text += "product name" + this.name + "<br>";
+            text += "product price" + this.price + "<br>";
+            text += "product details" + this.details + "<br>";
+            text += "product weight" + this.weight + "<br>";
+            return text;
+        }
+        document.write(product.info());
+    </script>
+</body>
+</html>

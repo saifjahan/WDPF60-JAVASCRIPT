@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="myform">
+        Student Id: <input type="text" name="Student id" placeholder="enter student id"><br>
+        Name: <input type="text" name="name" placeholder="name"><br>
+        Course: <input type="course" name="course" placeholder="course"><br>
+        Year/Section: <input type="year" name="year" placeholder="year/section"><br>
+        <button type="button" onclick="openwindow()">try it</button>
+    </form>
+    <script>
+        function openwindow(){
+            let sid = document.myform.id.value;
+            let sn = document.myform.name.value;
+            let co = document.myform.course.value;
+            let year = document.myform.year.value;
+            if(sid == ""){
+                alert("Student ID must be entered")
+
+            }else if(sn == ""){
+                alert("name must be entered")
+
+            }else if(co ==""){
+                alert("course must be entered")
+
+            }else if(year == ""){
+                alert("year must be entered")
+
+            }else{
+                let mywindow = window.open("","abc","width=800,height=500");
+           // mywindow.document.write(sid + "<br>");
+           // mywindow.document.write(sn + "<br>");
+            //mywindow.document.write(co + "<br>");
+           // mywindow.document.write(year + "<br>");
+           let output;
+           output = "<h1 student information </h1>"
+            output += "Student ID: " + sid + "<br>"
+            output += "Name: " + sn + "<br>"
+            output += "Course: " + co + "<br>"
+            output += "year: " + year + "<br>"
+            mywindow.document.write(output);
+            }
+            
+        }
+    </script>
+</body>
+</html>

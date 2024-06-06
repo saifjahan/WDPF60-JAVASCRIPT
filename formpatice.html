@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="myform">
+        <fieldset>
+            Name: <input type="text" name="name" placeholder="enter name"><br>
+            Contact: <input type="text" name="contact" placeholder="contact"><br>
+            Remarks: <textarea name="remarks" id=""></textarea><br>
+            Gender:  Male<input type="radio"name="sex" value="male">Female <input type="radio" name="sex" value="female"><br>
+            Courses: NT <input type="checkbox">,IAD <input type="checkbox">,DDD <input type="checkbox">,ESAD <input type="checkbox"><br>
+            Location link: <select name="list" id="">
+             <option value="">Dropdown list</option>
+             <option value="">Banani</option>
+             <option value="">Dhanmondi</option>
+             <option value="">Mirpur</option>   
+            </select>
+            <button type="button" onclick="openwindow()">submit</button>
+           
+        </fieldset>
+    </form>
+    <script>
+        function openwindow(){
+            let name = document.myform.Name.value;
+            let contact = document.myform.Contact.value;
+            let remarks = document.myform.Remarks.value;
+            let gender = document.myform.Gender.value;
+            let course = document.myform.course.value;
+
+            let output = "<h1 student information </h1>"
+            output +=  "Name:" + name + "<br>"
+            output +=  "Contact:" + contact + "<br>"
+            output +=  "Remarks:" + remarks + "<br>"
+            output +=  "Gender:" + gender + "<br>"
+            let mw = window.open("", "", "height=250 width=400")
+            mw.document.write(output);
+            
+
+            
+
+        }
+    </script>
+</body>
+</html>

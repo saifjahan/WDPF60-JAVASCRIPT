@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>trainee di</h3>
+    <form action="" name="myform">
+        <fieldset>
+            <strong>name:</strong>
+            <input type="text" name="name"><br>
+            <strong>contact</strong>
+            <input type="text" name="contact">
+            <strong>remarks</strong>
+            <input type="text" name="remarks"><br>
+            <strong>sex</strong>
+            <input type="radio" name="gender" value="male">male
+            <input type="radio" name="gender" value="female">female <br>
+            <strong>course:</strong>
+            <input type="checkbox" name="nt" value="NT" class="course">NT
+            <input type="checkbox" name="iad" value="IAD" class="course">IAD
+            <input type="checkbox" name="ddd" value="DDD" class="course">DDD
+            <input type="checkbox" name="easd" value="EASD" class="course">EASD <br>
+            <strong>location:</strong>
+            <select name="location">
+                <option>select one</option>
+                <option value="dhaka">dhaka</option>
+                <option value="dhonmondi">dhonmondi</option>
+            </select><br>
+            <button onclick="validate()">validate</button>
+        </fieldset>
+    </form>
+    <script>
+        function validate(){
+            let name = document.myform.name.value;
+            let contact = document.myform.contact.value;
+            let remark = document.myform.remarks.value;
+            let sex = document.myform.gender.value;
+            let course = document.getElementsByClassName("course")
+            let cd = ""
+            for(let i=0; i<course.length;i++){
+                if(course[i].checked){
+                    cd += course[i].value
+                } 
+            }
+            let location = document.myform.location.value;
+            let mywidow = window.open("","abc","width=600, height=400")
+            let output;
+            output = "<h1 trainee date </h1>"
+            output += "name:" + name + "<br>"
+            output += "contact:" + contact + "<br>"
+            output += "remark:" + remark + "<br>"
+            output += "sex:" + sex + "<br>"
+            output += "course:" + cd + "<br>"
+            output += "location:" + location+ "<br>"
+            mywidow.document.write(output);
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Event form</h2>
+    <div id="show"></div>
+    <form action="thinkyou.html" name="myform" onsubmit="return eventvalida()">
+        Name: 
+        <input type="text" name="fname" placeholder="enter first name">
+        <input type="text" name="lname" placeholder="enter last name"><br>
+        company: <input type="text" name="cname" placeholder="enter company name"><br>
+        Email: <input type="text" name="email" placeholder="enter email"><br>
+        Phone:
+        <select name="phon" id="">
+            <option value="">select one</option>
+            <option value="">0121213366</option>
+            <option value="">1747849955</option>
+            <option value="">1254869587</option>
+            </select><br>
+            Subject:
+            <select name="subject" id="">
+                <option value="">select one</option>
+                <option value="">php</option>
+                <option value="">javasript</option>
+            </select><br>
+            Are you an existing customer?<br>
+            <input type="radio" name="a" value="yes">
+            <input type="radio" name="a" value="no"><br>
+            <button onclick="eventvalid()" type="submit">Register</button>
+
+    </form>
+    <script>
+        function eventvalid(){
+            let fname = document.myform.fname.value;
+            let lname = document.myform.lname.value;
+            let company = document.myform.cname.value;
+            let email = document.myform.email.value;
+            let phone = document.myform.phon.value;
+            let subject = document.myform.subject.value;
+            let a = document.myform.a.value;
+
+            const errors = [];
+            if(fname==""){
+                errors[errors.length] = "First name can't be empty";
+
+            }
+            if(lname== ""){
+                errors[errors.length] = "Last name can't be empty";
+            }
+            if(lname== ""){
+                errors[errors.length] = "Last name can't be empty";
+            }
+            if(company== ""){
+                errors[errors.length] = "Last name can't be empty";
+            }
+            if(email== ""){
+                errors[errors.length] = "Last name can't be empty";
+            }
+            if(errors.length>0){
+                let erroroutput = "<ul>";
+                for(let i=0; i<errors.length; i++){
+                    erroroutput += "<li>" + errors[i] + "</li>";
+                }
+                erroroutput += "</ul>";
+
+                document.getElementById("show").innerHTML = erroroutput;
+                return false;
+                
+            }else {
+               // document.getElementById("show").innerHTML = "";
+               return true;
+            }
+
+
+        }
+    </script>
+</body>
+</html>
